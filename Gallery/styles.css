@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*   {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body    {
+    background-image: url('assets/background2.jpg');
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: rgba(0,0,0,0.9);
+}
+
+h1  {
+    color: white;
+    text-align: center;
+    font-size: 5.5rem;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    transition: 1000ms ease;
+}
+
+h1:hover    {
+    font-size: 6rem;
+    color: #ffa300;
+}
+
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    margin: 20px auto;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+
+.carousel-track img  {
+    width: calc(31%);
+    flex: 0 0 calc(31%);
+    object-fit: cover;
+    padding: 15px;
+    border-radius: 40px;
+    transition: 500ms ease;
+}
+
+.carousel-track img.center  {
+    /* transform: scale(1.1); */
+    z-index: 1;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.7);
+}
+
+.carousel-track img:not(.center)    {
+    opacity: 0.4;
+    transform: scale(0.9);
+}
+
