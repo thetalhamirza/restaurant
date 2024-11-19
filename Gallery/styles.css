@@ -61,3 +61,15 @@ h1:hover    {
     transform: scale(0.9);
 }
 
+.hide   {
+    opacity: 0;
+}
+
+/* img {
+    transition: 500ms ease;
+}
+
+img:hover   {
+    filter: blur(4px);
+} */
+
