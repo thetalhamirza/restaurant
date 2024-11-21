@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+    /* Header Styling */
+header {
+    font-family: Poppins;
+    width: 100%;
+    margin: auto;
+    padding: 15px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000; /* If you want to change the nav bar background color or op[acity do it here*/
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+header .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #eee;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+header .logo:hover {
+    color: #f5a623; /* Highlight color */
+}
+
+header .menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+header .menu li a {
+    color: #eee;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: background 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+header .menu li a:hover {
+    background-color: #f5a623;
+    color: #333;
+}
+
+header .van {
+    display: none;
+    position: fixed;
+    height:100vh;
+    width:50vw;
+    background-color: #ffa300;
+    left:-1000px;
+    z-index:20;
+    transition: 0.5s ease;
+    margin-top: 32px;
+}
+
+
+header .van ul{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    margin-top: 40px;
+    list-style: none;
+}
+header .van ul li{
+    margin: 15px 0px;
+}
+header .van ul li a{
+    color: black;
+    margin-top: 40px;
+    text-decoration: none;
+    list-style: none;
+    font-size: 1em;
+    font-weight: 600;
+    transition:100ms ease;
+}
+
+header .burger {
+    display: none; /* Ensure it's visible */
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 40px;
+    width: 50px;
+    position: fixed;
+    right: 20px;
+    top:13px;
+
+}
+
+header .burger .line {
+    background-color: #ffa300;
+    display: block;
+    border-radius: 10px;
+    width: 100%;
+    height: 6px;
+}
+.line{
+    background-color: #ffa300;
+    display:block;
+    border-radius: 10px;
+    width:100%;
+    height:6px;
+}
+header .van.show{
+    left:0px;
+}
+
+/* ADDING BURGER ANIMATION XD */
+
+.line.alter-1 {
+    transform: rotate(45deg) translateY(16px);
+    transition: transform 0.3s ease;
+}
+
+.line.alter-2 {
+    opacity: 0; /* Hide the middle line */
+    transition: opacity 0.3s ease;
+}
+
+.line.alter-3 {
+    transform: rotate(-45deg) translateY(-16px);
+    transition: transform 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    header .menu {
+        display: none; /* Hide the desktop menu */
+    }
+
+    header .burger {
+        display: flex; /* Ensure the burger menu is visible */
+    }
+
+    header .van {
+        display: block; /* Show the off-screen menu */
+    }
+}
+</style>
+
+<body>
+    <!-- header Navigation Bar-->
+    <header>
+        <div class="logo">Name</div>
+
+        <div class="container">
+            <div class="burger" onclick="switch1();">
+                <div class="line line-1"></div>
+                <div class="line line-2"></div>
+                <div class="line line-3"></div>
+            </div>            
+            <van class="van"> <!-- Off-Screen Menu-->
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Menu</a></li>
+                    <li><a href="">Team</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Offer</a></li>
+                    <li><a href="">Gallery</a></li>
+                    <li><a href="Reservation.html">Reservation</a></li>
+                </ul>
+            </van>
+            <nav>
+                <ul class="menu">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Menu</a></li>
+                    <li><a href="">Team</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Offer</a></li>
+                    <li><a href="">Gallery</a></li>
+                    <li><a href="Reservation.html">Reservation</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header> 
+
+<script>
+let flag = false;
+let nav = document.querySelector('.van')
+let line = document.querySelectorAll('.line')
+function switch1() {
+  if (flag == false) {
+    setTimeout(() => {
+      nav.classList.add('show');
+    }, 100);
+    line[0].classList.add('alter-1');
+    line[1].classList.add('alter-2');
+    line[2].classList.add('alter-3');
+    flag = true;
+  }
+  else if (flag == true) {
+    setTimeout(() => {
+      nav.classList.remove('show');
+    }, 100);
+    line[0].classList.remove('alter-1');
+    line[1].classList.remove('alter-2');
+    line[2].classList.remove('alter-3');
+    flag = false;
+  }
+};
+</script>
+</body>
+</html>

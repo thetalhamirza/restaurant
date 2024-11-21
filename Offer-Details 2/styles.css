@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*   {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body    {
+    background-image: url(./assets/background.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: rgba(0,0,0,0.6);
+}
+
+h1  {
+    color: white;
+    text-align: center;
+    font-size: 5.5rem;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    transition: 1000ms ease;
+}
+
+h1:hover    {
+    font-size: 6rem;
+    color: #ffa300;
+}
+
+h3  {
+    color: black;
+    text-align: center;
+    font-size: 3rem;
+    background-color: #ffa300;
+    border-radius: 25px 25px 3px 3px;
+}
+
+.footer  {
+    color: antiquewhite;
+    text-align: center;
+    margin: 100px;
+    transition: 500ms ease;
+}
+
+.footer:hover    {
+    color: #ffa300;
+    transform: scaleX(1.3);
+}
+
+.boxes  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+.box {
+    flex-basis: 100%;
+    background-color: slategray;
+    margin: 80px 25px 0px 25px;
+    align-items: center;
+    height: 400px;
+    width: 150px;
+    border-radius: 25px;
+    transition: 500ms ease;
+    overflow: hidden;
+}
+
+.box:hover  {
+    transform: scale(1.05);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.overlay-container {
+    position: relative;
+    width: auto; 
+    height: auto; 
+    display: inline-block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 153, 0, 0.85); 
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-container:hover .overlay {
+    opacity: 1;
+}
+
+.overlay-text   {
+    color: black;
+    margin: auto;
+    font-size: 20px;
+}
+.price   {
+    color: black;
+    margin: auto;
+    font-size: 35px;
+}
+
+@media screen and (min-width: 800px) {
+    .column {
+      flex: 1;
+    }
+  }
